@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.mulodo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// Building RESTful Web Services
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	// thymeleaf
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+	
+	// sercurity
+	compile('org.springframework.boot:spring-boot-starter-security')
+	testCompile('org.springframework.security:spring-security-test')
+	compile group: 'org.springframework.security.oauth.boot', name: 'spring-security-oauth2-autoconfigure', version: '2.1.1.RELEASE'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+}
